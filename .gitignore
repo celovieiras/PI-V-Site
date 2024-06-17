@@ -155,7 +155,7 @@ dmypy.json
 cython_debug/
 
 #.env file
-.env
+/piv/.env
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
