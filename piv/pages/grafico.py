@@ -6,6 +6,7 @@ import dotenv
 import os
 import plotly.express as px
 
+st.set_page_config(page_title='Visualização da trepidação', layout='wide')
 # carregando .env
 dotenv.load_dotenv(dotenv.find_dotenv())
 user_mongo_access = os.getenv("MONGO_ACCESS")
@@ -25,7 +26,6 @@ def load_dataframe():
 data = load_dataframe()
 val_dt_padrao = dt.date(2024,5,30)
 
-st.set_page_config(page_title='Visualização da trepidação', layout='wide')
 # imagem_logo = "images/fatec_logo.png"
 # st.logo(imagem_logo, icon_image=imagem_logo)
 # st.image(imagem_logo, output_format="PNG")
