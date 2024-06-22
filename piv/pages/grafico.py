@@ -33,6 +33,8 @@ st.title("Análise de trepidação em ambiente doméstico")
 exclui_zero_trep = data['acelerometroZ'][data['acelerometroZ'] != 0]
 valor_min_trep = exclui_zero_trep.min()
 valor_max_trep = data['acelerometroZ'].max()
+valor_med_trep = data['acelerometroZ'].mean()
+
 
 with st.container():
     st.header("Selecione as opções abaixo:")
@@ -44,6 +46,7 @@ with st.container():
             with col:
                 dt_trep = st.date_input("Selecione a data da trepidação", value=val_dt_padrao, format="DD/MM/YYYY")
                 st.write(f"Menor valor de trepidação registrado: {valor_min_trep}")
+                st.write(f"Valor médio das trepidações: {valor_med_trep}")                
 
             with col2:
                 hr_trep = st.time_input("Selecione a hora", value=dt.time(0, 0), step=3600)
