@@ -50,7 +50,7 @@ with st.container():
 
             with col2:
                 hr_trep = st.time_input("Selecione a hora", value=dt.time(0, 0), step=3600)
-                st.write(f"Maior valor de trepidação registrado: {round(valor_max_trep, 2)}")
+                st.write(f"Maior valor de trepidação registrado: {valor_max_trep:,.2f}")
 
     with st.container():
         dt_hora_selec = dt.datetime.combine(dt_trep, hr_trep)
