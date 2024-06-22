@@ -46,7 +46,7 @@ with st.container():
             with col:
                 dt_trep = st.date_input("Selecione a data da trepidação", value=val_dt_padrao, format="DD/MM/YYYY")
                 st.write(f"Menor valor de trepidação registrado: {valor_min_trep}")
-                st.write(f"Valor médio das trepidações: {valor_med_trep:,.2f}")                
+                st.write(f"Valor médio das trepidações: {round(valor_med_trep, 2)}")                
 
             with col2:
                 hr_trep = st.time_input("Selecione a hora", value=dt.time(0, 0), step=3600)
