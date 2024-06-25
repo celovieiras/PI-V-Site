@@ -59,9 +59,9 @@ with st.container():
         filtros_grafico_2['diff'] = filtros_grafico_2['acelerometroZ'].diff().fillna(0).abs()
         change_threshold = 0
         momentos_trepidacao_2 = filtros_grafico_2[(filtros_grafico_2['diff'] > change_threshold) & (filtros_grafico_2['acelerometroZ'] != 0)]
-        fig = px.line(momentos_trepidacao_2.set_index('dt_cria')['acelerometroZ'], title='Registros de trepidação')
+        fig_2 = px.line(momentos_trepidacao_2.set_index('dt_cria')['acelerometroZ'], title='Registros de trepidação')
         # st.line_chart(momentos_trepidacao.set_index('dt_cria')['acelerometroZ'], color='#FEA82F', use_container_width=True)
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig_2, use_container_width=True)
         
     with st.container():
         dt_hora_selec = dt.datetime.combine(dt_trep, hr_trep)
