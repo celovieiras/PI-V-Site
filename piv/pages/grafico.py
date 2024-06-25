@@ -65,7 +65,10 @@ with st.container():
         
     with st.container():
         dt_hora_selec = dt.datetime.combine(dt_trep, hr_trep)
-        filtros_grafico = data[data['dt_cria'].isin(dt_hora_selec)]
+        if dt_hora_selec:
+            filtros_grafico = data[data['dt_cria'].isin(dt_hora_selec)]
+        else:
+            filtros_grafico = data.copy()
 
         filtros_grafico['diff'] = filtros_grafico['acelerometroZ'].diff().fillna(0).abs()
         change_threshold = 0
