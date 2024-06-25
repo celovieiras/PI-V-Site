@@ -63,16 +63,16 @@ with st.container():
         # st.line_chart(momentos_trepidacao.set_index('dt_cria')['acelerometroZ'], color='#FEA82F', use_container_width=True)
         st.plotly_chart(fig_2, use_container_width=True)
         
-    with st.container():
-        dt_hora_selec = dt.datetime.combine(dt_trep, hr_trep)
-        if dt_hora_selec:
-            filtros_grafico = data[data['dt_cria'].isin(dt_hora_selec)]
-        else:
-            filtros_grafico = data.copy()
+    # with st.container():
+    #     dt_hora_selec = dt.datetime.combine(dt_trep, hr_trep)
+    #     if dt_hora_selec:
+    #         filtros_grafico = data[data['dt_cria'].isin(dt_hora_selec)]
+    #     else:
+    #         filtros_grafico = data.copy()
 
-        filtros_grafico['diff'] = filtros_grafico['acelerometroZ'].diff().fillna(0).abs()
-        change_threshold = 0
-        momentos_trepidacao = filtros_grafico[(filtros_grafico['diff'] > change_threshold) & (filtros_grafico['acelerometroZ'] != 0)]
-        fig = px.line(momentos_trepidacao.set_index('dt_cria')['acelerometroZ'], title='Registros de trepidação')
-        # st.line_chart(momentos_trepidacao.set_index('dt_cria')['acelerometroZ'], color='#FEA82F', use_container_width=True)
-        st.plotly_chart(fig, use_container_width=True)
+    #     filtros_grafico['diff'] = filtros_grafico['acelerometroZ'].diff().fillna(0).abs()
+    #     change_threshold = 0
+    #     momentos_trepidacao = filtros_grafico[(filtros_grafico['diff'] > change_threshold) & (filtros_grafico['acelerometroZ'] != 0)]
+    #     fig = px.line(momentos_trepidacao.set_index('dt_cria')['acelerometroZ'], title='Registros de trepidação')
+    #     # st.line_chart(momentos_trepidacao.set_index('dt_cria')['acelerometroZ'], color='#FEA82F', use_container_width=True)
+    #     st.plotly_chart(fig, use_container_width=True)
